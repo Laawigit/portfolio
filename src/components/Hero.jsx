@@ -13,6 +13,7 @@ export const Hero = forwardRef(({ scrollHandlers }, ref) => {
   const [slideGreetingIn, setSlideGreetingIn] = useState(false);
 
   const downloadResume = () => {
+    console.log("Downloading resume...");
     const link = document.createElement("a");
     link.href = "Abdulhakim_resume.pdf";
     link.setAttribute("download", "Abdulhakim_resume.pdf");
