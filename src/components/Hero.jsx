@@ -8,19 +8,18 @@ import { NeonButton } from "./NeonButton";
 import { useEffect, useState, forwardRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-export const Hero = forwardRef(({scrollHandlers}, ref) => {
+export const Hero = forwardRef(({ scrollHandlers }, ref) => {
   const [slideImgIn, setSlideImgIn] = useState(false);
   const [slideGreetingIn, setSlideGreetingIn] = useState(false);
-  
+
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/Abdulhakim_resume.pdf"; 
+    link.href = "Abdulhakim_resume.pdf";
     link.setAttribute("download", "Abdulhakim_resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
-  
 
   useEffect(() => {
     const imgTimeout = setTimeout(() => setSlideImgIn(true), 500);
