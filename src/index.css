@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+:root{
+  --bg-gdColor: #2c1c2e;
+  --btn-gd: linear-gradient(to left, #3082fd , #d318f8);
+}
+
+body {
+  background: var(--bg-gdColor);
+ /* animation: MoveBackgroundPosition 10s linear infinite alternate; */
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+@keyframes MoveBackgroundPosition {
+  0% {
+    background-position: left;
+    background: linear-gradient(to left, #370f5f, #1f112c 30%, #502066);
+  }
+  20% {
+    background-position: right;
+    background: linear-gradient(to left, #502066 #370f5f, #1f112c 30%);
+  }
+  50% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+    background: linear-gradient(to left, #370f5f, #502066 #1f112c 30%);
+  }
+}
+
+@layer base {
+  header {
+    @apply h-[7em] flex justify-center items-center z-40;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      @apply text-[.9rem];
+    }
+  }
+}
+
+@layer components {
+  .navLink {
+    @apply flex w-[30%] justify-around items-center border border-gray-500 rounded-2xl p-2 text-[1.3rem] text-white;
+  }
+
+ 
+}
+
+.section-title{
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right,  #f818da, #a130fd, #2c7ffc, #9a30fd, #f818da);
+  background-size: 20%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) and (max-width: 1090px) {
+  .navLink {
+    width: 40%;
+    color: #ff0000c0;
+  }
+
+  .contact {
+    width: 20%;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  
+  .section-title {
+    font-size: 1.5rem;
+    background-size: 70%;
+  }
+  
+}
